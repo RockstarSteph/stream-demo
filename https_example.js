@@ -11,7 +11,12 @@ var options = {
 
 var callback = function(response){
   console.log('#4: In response handler callback!');
-  console.log('#5: Responses: ', response);
+  //console.log('#5: Responses: ', response);
+
+  response.on('data', function(chunk){
+    console.log('[-- CHUNK OF LENGTH' + chunk.length + '--]');
+    console.log(chunk.toString());
+  });
 }
 
 console.log("#2 I'm about to make the request!");
