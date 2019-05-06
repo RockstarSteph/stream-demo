@@ -3,8 +3,10 @@ var https = require('https');
 console.log('#1 I dit it MothaFlippin!');
 
 var options = {
-  host: 'www.example.org',
-  path: '/'
+  //host: 'www.example.org',
+  host: 'stream-large-file.herokuapp.com',
+  path: '/give-me-stuff-now'
+
 };
 
 //called by https when the request is made.
@@ -14,7 +16,7 @@ var callback = function(response){
   //console.log('#5: Responses: ', response);
 
   response.on('data', function(chunk){
-    console.log('[-- CHUNK OF LENGTH' + chunk.length + '--]');
+    console.log('[-- CHUNK OF LENGTH ' + chunk.length + '--]');
     console.log(chunk.toString());
   });
 }
